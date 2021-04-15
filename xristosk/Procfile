@@ -1,0 +1,1 @@
+web: gunicorn xristosk.wsgi --log-file -
