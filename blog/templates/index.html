@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Xristos Katsaros - Blog{% endblock %}
+
+{% block content %}
+
+
+<div class='row'>
+    <div class='col s12 center'>
+        <a href='https://xristos-katsaros.medium.com/'><img src="{% static 'imgs/medium logo.jpeg'%}" style='max-height: 25%; max-width: 25%'></a>
+        <p class='center-align'>See my Medium page for more blogs.</p>
+    </div>
+</div>
+
+{% if user.is_authenticated %}
+    <div class="row container center">
+        <a class="waves-effect waves-light btn deep-orange lighten-2" href={% url 'add_blog' %}>Add Post</a>
+    </div>
+{% endif %}
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+{% for post in object_list %}
+    {% if post.status == 1 %}
+        <div class="section black">
+            <div class="row container">
+                <a href={% url 'blog_detail' post.pk %}><h3 class="header primary">{{post.title}}</h3></a>
+                <h5 class='text-white'>{{post.created_on}}</h5>
+                <div class='divider'></div>
+                <p class="white-text">
+                    <h6>{{post.body|truncatechars_html:200|safe}}</h6>
+                </p>
+            </div>
+        </div>
+
+        <div class="parallax-container">
+            <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+        </div>
+{% endif %}
+
+{% endfor %}
+
+{% endblock%}

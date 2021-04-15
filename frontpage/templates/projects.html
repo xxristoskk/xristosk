@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Xristos Katsaros - Projects{% endblock %}
+
+
+{% block content %}
+
+<style type='text/css'>
+
+    .card {
+        color: black;
+        position: relative;
+        background-color: #e0e0e0;
+        // margin: 10px auto;
+        height: 100%;
+        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    .card {
+        height: 100%;
+    }
+
+    .card .card-image img {
+        //object-fit: contain !important;
+    }
+
+    a {
+        transition: color 1s ease;
+    }
+    
+    a:hover {
+        color: orangered;
+    }
+</style>
+
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+<div class="section black">
+    <div class="row container">
+        <a href='https://curation-station-2.herokuapp.com/'><h4 class="header primary">CurationStation</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>The aim of this project is to make it easier to discover and support independent musical artists. It is the first Django app I made 
+                and deployed, and plan on using it as a vessel for the machine learning model I started developing at Flatiron</p>
+            </div>
+            <div class='card-action'>
+                <a href='https://curation-station-2.herokuapp.com/'>Heroku</a> <a href='https://github.com/xxristoskk/curation-station-2'>GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row container">
+        <a href='https://github.com/xxristoskk/django-example'><h4 class="header primary">NLP Dashboard</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>Natural Language Processing is an area of Data Science that helps us interpret the meanings of large bodies of text. In this project, I scraped Twitter 
+                during a couple of the Primary Debates to see what people were saying about the candidates. I wrote a <a href='https://xristos-katsaros.medium.com/which-democrat-does-twitter-favor-9ef5d575412a'>
+                <u>blog</u></a> about the process and created a <a href='https://testingtw33typy.herokuapp.com/'><u>dashbaord</u></a> using Django.</p>
+            </div>
+            <div class='card-action'>
+                <a href='https://testingtw33typy.herokuapp.com/'>Heroku</a> <a href='https://github.com/xxristoskk/django-example'>GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row container">
+        <a href='https://github.com/xxristoskk/where-are-the-voters'><h4 class="header primary">Where Are The Voters?</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>Curious about the ways machine learning could help political campaigns reach more apolitical voters, 
+                I used data from a survey taken after the 2016 election to build a model that could predict voter turnout with ~89% accuracy.</p>
+            </div>
+            <div class='card-action'>
+                <a href='https://github.com/xxristoskk/where-are-the-voters'>GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+{% endblock %}

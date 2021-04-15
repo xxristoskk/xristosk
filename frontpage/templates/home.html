@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Xristos - Home{% endblock %}
+
+
+{% block content %}
+
+<style type='text/css'>
+    
+    a {
+        transition: color 1s ease;
+    }
+    
+    a:hover {
+        color: orangered;
+    }
+</style>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+<div class="section black">
+    <div class="row container">
+        <h4 class="header primary">About Me</h4>
+        <blockquote>
+            <p>Hello! My name is Xristos, and I am a problem explorer and solver interested in the intersections of philosophy and data.
+            One might ask "How does philosophy relate to data"? Numbers on their own don't have any meaning, and poor interpretations of 
+            them can result in loss of money, time, and/or the spreading of misinformation.</p>
+            <p>I studied philosophy and biology at Harold Washington college, continued philosophy at Brooklyn college, and went through Flatiron's Data Science
+            Immersive Bootcamp. You can find more details about me on my <a href={% url 'blog' %} style='color:grey'>blog</a>.</p>
+            <p>Currently, I am open to roles involving research, data analysis, natural language processing, and project management.</p>
+        </blockquote>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+<div class="section black">
+    <div class='container'>
+
+            <div class="row">
+                <h4 class="header primary">Services & Skills</h4>
+                <div class='divider'></div>
+                <p>My experience with machine learning and data science started in 2019. Since then, I have worked with supervised and unsupervised algorithms,
+                and created visualizations with data stories to show my work.
+                </p>   
+                <div class='col l3 m2 right-align'>
+                    <img src="{% static 'imgs/favpng_vector-graphics-analysis-illustration.png' %}" style='max-height: 100px; max-width: 100px;'>
+                </div>
+                <div class='col l3 m2'>
+                    <a href='https://medium.com/qri-io/we-built-this-city-on-bots-trolls-905065758fd4'><p class='primary'>Data Analysis</p></a>
+                    <p>This is an area I have the most experience in. I enjoy digging into data and presenting the insights extracted from it.</p>
+                </div>
+                <div class='col l3 m2 right-align'>
+                    <img src="{% static 'imgs/board-1709188_640.png' %}" style='height: 100px; width: 100px;'>
+                </div>
+                <div class='col l3 m2'>
+                    <a href='https://testingtw33typy.herokuapp.com/'><p class='primary'>Natural Language Processing</p></a>
+                    <p>Language is our oldest tool, and being able to dissect it with numbers reveals a lot about what people
+                    think and feel about a subject or product.</p>
+                </div> 
+            </div> 
+            <div class='row'>
+                <div class='col l3 m2 right-align'>
+                     <img src="{% static 'imgs/chart-6075113_640.png' %}" style='height: 100px; width: 100px;'>
+                </div>
+                <div class='col l3 m2'>
+                    <a href='https://testingtw33typy.herokuapp.com/'><p class='primary'>Dashboards</p></a>
+                    <p>A dashboard is a single-page website with interactive charts. They present results
+                    in a way that is more engaging than a plain graph.</p>
+                </div>
+                <div class='col l3 m2 right-align'>
+                    <img src="{% static 'imgs/web-site-1706400_640.png' %}" style='height: 100px; width: 100px;'>
+                </div>
+                <div class='col l3 m2'>
+                    <p class='primary'>Web Development</p>
+                    <p>If you're needing a site for a store, restaurant, or portfolio, I can 
+                    make something that looks great on a computer and on mobile.</p>
+                </div> 
+            </div>
+            
+        <div class='divider'></div>
+        <div class='row' style='padding-top: 20px;'>
+            These are my base rates. Depending on the scale of the project, they are negotiable.</p>
+            <div class='container'>
+                <ul>
+                    <li><span class='primary'>Complete data science project:</span> $450/day</li>
+                    <li><span class='primary'>Data project consultation:</span> $40/hr (max 3 hours)</li>
+                    <li><span class='primary'>Website development & deployment:</span> $40/hr
+                </ul>
+            </div>
+            <p>Reach out to me with an outline of the services your interested
+            in and what your goals are, and I will get back to you with a quote as soon as possible.</p>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+<div class='container'>
+    <div class='section black'>
+        <h4 class="header primary">Contact</h4>
+        <form method='POST'>
+            {% csrf_token %}
+            <div class='input-field'>
+                {{form.name}}
+                <label class='active' for='name'>Your Name</label>
+            </div>
+            <div class='input-field'>
+                {{form.subject}}
+                <label class='active' for='subject'>Subject</label>
+            </div>
+            <div class='input-field'>
+                {{form.sender}}
+                <label class='active' for='sender'>Your Email</label>
+            </div>
+            <div class='input-field'>
+                {{form.message}}
+            </div>
+            <button class="waves-effect waves-light btn deep-orange" type='submit' value='Save'>Send Email</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

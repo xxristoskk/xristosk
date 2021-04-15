@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+<div class="section black">
+    <div class="row container">
+        <h2 class="header primary">Add Blog</h2>
+        <form method='POST'>
+            {% csrf_token %}
+            {{form.media}}
+            {{form.as_p}}
+            <button class="waves-effect waves-light btn deep-orange">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+{% endblock %}

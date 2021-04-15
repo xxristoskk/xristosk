@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="{% static 'css/materialize.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #top-btn {
+            opacity: 70%;
+        }
+        .card {
+            animation-name: fadeIn;
+            animation-duration: 3s;
+        }
+
+        .parallax-container {
+            height: 175px;
+        }
+
+        .primary {
+            transition: color 1s ease;
+            animation-name: fadeIn;
+            animation-duration: 3s;
+        }
+
+        .primary:hover {
+            color: grey;
+        }
+
+        img {
+            filter: grayscale(100%);
+            transition: filter 1s ease;
+        }
+
+        img:hover {
+            filter: grayscale(100) opacity(30%);
+        }
+    </style>
+    <title>{% block title %}Xristos Katsaros{% endblock %}</title>
+
+</head>
+<body>
+
+    <div class='container'>
+        <div class='nav-wrapper'>
+            <div class='row'>
+                <div class='valign-wrapper col s6'>
+                    <ul id='slide-out' class='sidenav grey darken-3'>
+                        <div class='container center'>
+                            <li>
+                                <img style="border-radius: 50%; max-width: 50%; padding-top: 50px; -webkit-filter: grayscale(100%); filter: grayscale(100%)" src="{% static 'imgs/xkphoto.png' %}">
+                            </li>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href={% url 'blog' %}>Blog</a></li>
+                            <li><a href={% url 'datasets' %}>Datasets</a></li>
+                            <li><a href={% url 'projects' %}>Projects</a></li>
+                        </div>
+                    </ul>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger black"><i class="medium material-icons">menu</i></a>
+                </div>
+                <div class='col s6 right-align' style='padding-top: 17px;'>
+                    <a href='https://github.com/xxristoskk'>
+                    <img style='max-width:32px; max-height:32px;' src="{% static 'imgs/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png' %}"></a> 
+                    <a href='https://twitter.com/_xristosk_'>
+                    <img src="{% static 'imgs/Twitter logo/PNG/2021 Twitter logo - white.png' %}" style='max-width:32px; max-height:32px;'></a> 
+                    <a href='https://www.linkedin.com/in/xristos-katsaros/'>
+                    <img style='max-width:32px; max-height:32px;' src="{% static 'imgs/LinkedIn-Logos/LI-In-Bug.png' %}"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class='row center'>
+            <div class='divider'></div>
+            <a href="{% url 'home' %}"><h4 class='primary'>XRISTOS KATSAROS</h4></a>
+            <p>They/Them</p>
+            <h6 style='padding-bottom: 20px;'>Data Science | Machine Learning | Critical Analysis</h6>
+            <div class='divider'></div>
+        </div>
+    </div>
+
+        {% block content %}
+        {% endblock %}
+
+    <div class="fixed-action-btn">
+        <a class="waves-effect waves-light btn-floating btn-large deep-orange darken-4" style='display: none;' onclick="topFunction()" id='top-btn'>
+            <i class="large material-icons">arrow_upward</i>
+        </a>
+    </div>
+
+    <footer class='page-footer black'>
+        <div class='container'>
+        
+            <p class='right-align'>Created with <a href='https://www.djangoproject.com/'><u>Django</u></a> & <a href='https://materializecss.com/'><u>Materialize</u></a></p>
+            <p class='right-align'>© 2021 Xristos Katsaros</p>
+            
+        </div>
+    </footer>
+
+    <script>
+        //initializes all materialize js
+        M.AutoInit();
+
+        //function for back-to-top button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById('top-btn').style.display = 'block';
+            } else {
+                document.getElementById('top-btn').style.display = 'none';
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+    </script>
+    
+</body>
+</html>

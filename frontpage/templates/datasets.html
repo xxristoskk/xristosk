@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Xristos Katsaros - Datasets{% endblock %}
+
+{% block content %}
+
+<style type='text/css'>
+    .card {
+        color: black;
+        background: #e0e0e0;
+
+    }
+    
+    .card {
+    position: relative;
+    background-color: #f4f4f4;
+    // margin: 10px auto;
+    height: 100%;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    .card {
+    height: 100%;
+    }
+
+    .card .card-image img {
+    //object-fit: contain !important;
+    }
+
+    a {
+        transition: color 1s ease;
+    }
+    
+    a:hover {
+        color: orangered;
+    }
+</style>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+<div class="section black">
+    <div class="row container">
+        <a href='https://qri.cloud/xristosk/global_daily_covid19_updates_jhu'><h4 class="header primary">Daily COVID-19 Updates (Global)</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>This dataset is the aggregate of all the CSV files provided by <u><a href='https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data'>
+                COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a></u>. The folder on its own is hundreds 
+                of CSV files, but this dataset cuts down processing time for exploring the data as a whole.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row container">
+        <a href='https://qri.cloud/xristosk/bot_sentinel_trolls'><h4 class="header primary">Twitter Trolls & Bots</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>An incomplete list of Twitter accounts analyzed by <a href='https://botsentinel.com/'>Bot Sentinel</a>. At this time, Bot Sentinel does not 
+                have a public API to retrieve their data, so I made a web scraping script using Selenial to collect 2,000 accounts once a week. In addition to
+                 data from Bot Sentinel, I added additional features using Twitter's API.</p>
+            </div>
+            <div class='card-action'>
+                <a href='https://medium.com/qri-io/we-built-this-city-on-bots-trolls-905065758fd4'>Analyis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row container">
+        <a href='https://qri.cloud/xristosk/ucla_law_covid_prison_history'><h4 class="header primary">COVID-19 in Prisons/Jails</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>This dataset is the aggregate of updates provided by <u><a href='https://github.com/uclalawcovid19behindbars/data'>
+                UCLA Law</a></u>. In its early stages, the updates were only available from a Google Sheet, so I worked with some of the projects members 
+                to create an aggregated version of their data. This data was used in my analysis of policing during the early stages of the pandemic.</p>
+            </div>
+            <div class='card-action'>
+                <a href='https://medium.com/qri-io/policing-in-the-pandemic-45448687714b'>Analyis</a>
+            </div>
+        </div>
+    </div>
+    <div class="row container">
+        <a href='https://qri.cloud/xristosk/ra_club_info'><h4 class="header primary">Venue Details From Resident Avisor (Global)</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>Here, I used web scraping to get venue information from all of the clubs that have pages on Resident Advisor. The pages do not explicitly 
+                give all the details provided, and application of Natural Language Processing was used to find out if a venue hosts All-Ages events, along 
+                with the number of stages a venue might have. Future enhancements of this dataset will include geographic location.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row container">
+        <a href='https://qri.cloud/xristosk/ra_event_info'><h4 class="header primary">Event Details From Resident Avisor (Global)</h4></a>
+        <div class='card'>
+            <div class='card-content'>
+                <p>A useful dataset that compiments the Venue Details from Resident Advisor. Here you can find event informoation, between 2010 and 2020 from
+                most of the venues that have Resident Advisor pages. This is for an ongoing project that will be used to analyze distribution
+                of gigs between independent, DIY, and major signed artists.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'imgs/zu0W9Me.png' %}"></div>
+</div>
+
+
+<div class='row' style='padding-top: 25px;'>
+    <div class='col s12 center'>
+        <a href='https://qri.cloud/xristosk'><img src="{% static 'imgs/qri_data_snuggle_icon.png' %}" style='max-height: 150px; max-width: 150px;'></a>
+        <p class='center-align'>Find the rest of my public datasets on <a href='https://qri.cloud/xristosk'><u>Qri</u></a>.</p>
+    </div>
+</div>
+
+{% endblock %}
